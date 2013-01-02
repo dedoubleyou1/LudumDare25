@@ -1,9 +1,252 @@
-td {
-	border: 1px solid black;
-	width: 50px;
-	height: 50px;
+@import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
+
+html, body {margin:0;padding:0;}
+
+body {
+z-index: 2;
+background-image: url(art/dirttile.png);
+background-position: center top;
+font-family: 'Press Start 2P', cursive;
+font-size: 16px;
+color: white;
 }
 
-tbody, trow {
-	border: 1px solid black;
+/* MAIN STYLES */
+
+
+.holder{
+	position: absolute;
+	left: 0px;
+    right: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 664px;
 }
+
+.left-column{
+	width: 264px;
+	display: table-cell;
+}
+.right-column{
+	width: 400px;
+	display: table-cell;
+}
+
+#title{
+	background-image: url(art/title.png);
+	background-repeat: no-repeat;
+	width: 256px;
+	height: 64px;
+	margin-bottom: 16px
+}
+
+#surface {
+	position: relative;
+	background-image: url(art/surface.png);
+	background-repeat: repeat-x;
+	background-position: center bottom;
+	height: 144px;
+}
+
+#topside {
+	position: relative;
+	bottom: 0px;
+	height: 96px;
+	width: 368px;
+	padding: 16px;
+	margin-top: 16px;
+	background-image: url(art/topside.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+#dungeon {
+	margin-top: 8px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+}
+
+#floorBox {
+	margin-bottom: 16px;
+}
+
+
+/* FLOOR STYLING */
+
+.floor  {
+	height: 96px;
+	width: 368px;
+	padding: 16px;
+	position: relative;
+}
+
+.warehouse {
+	background-image: url(art/warehouse.png);
+	background-repeat: no-repeat;
+}
+
+.laboratory {
+	background-image: url(art/laboratory.png);
+	background-repeat: no-repeat;
+}
+
+
+
+
+/* CHARACTER STYLING */
+
+.character {
+	position: relative;
+	float: left;
+	width: 32px;
+	height: 64px;
+	margin-top: 32px;
+	cursor:pointer;
+	border: solid 2px transparent;
+	background-repeat: no-repeat;
+}
+
+.thug {
+	background-image: url(art/char1.png);
+}
+
+.scientist {
+	background-image: url(art/char2.png);
+}
+
+.thief {
+	background-image: url(art/char3.png);
+}
+
+.superhero {
+	background-image: url(art/hero1.png);
+}
+
+.police {
+	background-image: url(art/hero2.png);
+}
+
+.movingMinion {
+	position: absolute;
+	z-index: 2;
+}
+
+
+/* INFO STYLING */
+
+#store{
+	position: absolute;
+	background-color: black;
+	width: 240px;
+	color: white;
+	opacity: 0.4;
+	font-size: 16px;
+	padding: 8px;
+	margin-right: 8px;
+}
+
+.loot {
+	margin-top: 4px;
+	opacity: 2;
+}
+
+.fence {
+	position: absolute;
+	border: solid 2px white;
+	padding: 4px;
+	margin: 4px;
+	bottom: 4px;
+	cursor:pointer;
+	left: 0px;
+    right: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.fence:hover {
+	color: black;
+	background-color: white;
+}
+
+
+.meter { 
+	height: 12px;  /* Can be anything */
+	position: relative;
+	background: black;
+	padding: 2px;
+	border: solid 2px white;
+	margin: 4px;
+}
+
+.meter > span {
+	display: block;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	background-color: green;
+	transition: width 1s linear;
+	-moz-transition: width 1s linear; /* Firefox 4 */
+	-webkit-transition: width 1s linear; /* Safari and Chrome */
+	-o-transition: width 1s linear; /* Opera */
+}
+
+
+.button{
+	font-size: 8px;
+	border: solid 2px white;
+	padding: 4px;
+	margin: 4px;
+	bottom: 4px;
+	cursor:pointer;
+}
+
+.button:hover{
+	color: black;
+	background-color: white;
+}
+
+.money, .infamy {
+	margin: 8px;
+}
+
+.charinfo {
+	position: absolute;
+	background-color: black;
+	color: white;
+	opacity: 0.4;
+	font-size: 8px;
+	padding: 2px;
+	top: -24px;
+	visibility: hidden;
+}
+
+.character:hover > .charinfo {
+	visibility: visible;
+}
+
+.floorinfo {
+	background-color: black;
+	color: white;
+	opacity: 0.4;
+	font-size: 16px;
+	visibility: hidden;
+	text-align: center;
+	width:113px;
+	height:112px;
+	top: 0px;
+	left: 256px;
+	position: absolute;
+	border: solid 8px transparent;
+}
+
+.floor:hover > .floorinfo {
+	visibility: visible;
+}
+
+/* DRAG & DROP */
+
+.ui-draggable-dragging {
+	z-index: 1;
+}
+
